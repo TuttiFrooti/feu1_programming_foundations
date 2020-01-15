@@ -367,7 +367,18 @@ console.groupEnd();
  Add 2 New planets of your choosing to the front of the Array : https://nineplanets.org
 */
 
-planets.unshift(['Uranus']);
-planets[0].push(['Uranus is the seventh planet discovered in the Solar System that also led to the discovery of the last planet, Neptune they are both referred to as ice giants. Officially recognized in 1781 after many observations in the past, it is the third largest planet of the Solar System.']);
-planets[0].push('-197 °C');
-planets[0].push('86,810,300,000,000,000 billion kg (14.536 x Earth)');
+// planets.unshift(['Uranus']);
+// planets[0].push(['Uranus is the seventh planet discovered in the Solar System that also led to the discovery of the last planet, Neptune they are both referred to as ice giants. Officially recognized in 1781 after many observations in the past, it is the third largest planet of the Solar System.']);
+// planets[0].push('-197 °C');
+// planets[0].push('86,810,300,000,000,000 billion kg (14.536 x Earth)');
+
+var uranus = [
+  'Uranus',
+  [
+    'Uranus is the seventh planet discovered in the Solar System that also led to the discovery of the last planet, Neptune they are both referred to as ice giants. Officially recognized in 1781 after many observations in the past, it is the third largest planet of the Solar System.',
+    '-197 °C',
+    '86,810,300,000,000,000 billion kg (14.536 x Earth)'
+  ]
+]
+
+planets.unshift(uranus);

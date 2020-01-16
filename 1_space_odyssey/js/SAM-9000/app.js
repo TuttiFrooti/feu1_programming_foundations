@@ -85,25 +85,27 @@ _______/\\\\\________/\\\\\\\\\\\\______/\\\________/\\\______/\\\\\\\\\\\______
     b. ensure to choose the correct values and datatypes
     c. the droid should be built in your likeness (a human, with human features, 2 arms, legs etc)
 */
-var isAlive = true;
-var name = "SAM-9000";
-var hasJetPack = true;
-var suitColor = "white";
-var eyes = 4;
-var eyeColor = "green";
-var hairColor = "black";
-var legs = 3;
-var arms = 4;
-var hands = 4;
-var ears = 2;
-var canWalk = false;
-var canRun = false;
-var canFly = true;
-var hasWeapon = true;
-var isInGoodMood = true;
+const droid = {
+  isAlive: true,
+  name: "sam-9000",
+  hasJetPack: true,
+  suitColor: "white",
+  eyes: 4,
+  eyeColor: "green",
+  hairColor: "black",
+  legs: 3,
+  arms: 4,
+  hands: 4,
+  ears: 2,
+  canWalk: false,
+  canRun: false,
+  canFly: true,
+  hasWeapon: true,
+  isInGoodMood: true
+}
 
 console.log(".-.-. Booting .-.-.");
-console.log(name, isAlive, hasJetPack, eyes, eyeColor, hairColor, legs, arms, hands, ears, canWalk, canFly, hasWeapon);
+console.log(droid.name, droid.isAlive, droid.hasJetPack, droid.eyes, droid.eyeColor, droid.hairColor, droid.legs, droid.arms, droid.hands, droid.ears, droid.canWalk, droid.canFly, droid.hasWeapon);
 
 
 /*
@@ -113,7 +115,7 @@ console.log(name, isAlive, hasJetPack, eyes, eyeColor, hairColor, legs, arms, ha
        cannot go outside, console log the correct log based on that condition.
 */
 
-if (hasJetPack) {
+if (droid.hasJetPack) {
   console.log("JetPack is enabled!!! off I go outside to fix the satellite");
 } else {
   console.log("JetPack NOT enabled, please enable jetPack before doing a space walk");
@@ -248,45 +250,142 @@ ELSE
 */
 
 if(lunarRadar.isEnabled && lunarRadar.lat && lunarRadar.long) {
-  console.log("\u{1F91F} looking good " + name + " we are making our descent, now entering approach speed");
+  console.log("\u{1F91F} looking good " + droid.name + " we are making our descent, now entering approach speed");
   if (lunarRadar.approachSpeed >= 200 && lunarRadar.approachSpeed < 299) {
-    console.log("\u{269B} well done " + name + " we have touched down safely. Lets get some samples and get heck outta here!");
+    console.log("\u{269B} well done " + droid.name + " we have touched down safely. Lets get some samples and get heck outta here!");
   } else if (lunarRadar.approachSpeed >= 300) {
-    console.log("\u{1F627} coming in hot " + name + " decrease pitch!");
+    console.log("\u{1F627} coming in hot " + droid.name + " decrease pitch!");
   } else if (lunarRadar.approachSpeed >= 400) {
-    console.log("\u{1F627} coming in way too hot " + name + " decrease pitch!");
+    console.log("\u{1F627} coming in way too hot " + droid.name + " decrease pitch!");
   } else if (lunarRadar.approachSpeed >= 500) {
-    console.log("\u{1F627} coming in way too hot " + name + " decrease pitch!");
+    console.log("\u{1F627} coming in way too hot " + droid.name + " decrease pitch!");
   } else if (lunarRadar.approachSpeed >= 600) {
-    console.log("\u{1F627} coming in way too hot " + name + " decrease pitch!");
+    console.log("\u{1F627} coming in way too hot " + droid.name + " decrease pitch!");
   } else if (lunarRadar.approachSpeed >= 100) {
-    console.log("\u{1F47D} hmmm need a bit more heat " + name + " lets increase pitch and we should have a smooth landing");
+    console.log("\u{1F47D} hmmm need a bit more heat " + droid.name + " lets increase pitch and we should have a smooth landing");
   } else {
     console.log('Please enter an approach speed');
   }
 } else {
-  console.log("\u{1F9F1}\u{1F9F1}\u{1F9F1}\u{1F9F1} " + name + " you went down like a ton of bricks, the wrecked remains of the lunar lander can still be seen from earth twinkling in the distance.");
+  console.log("\u{1F9F1}\u{1F9F1}\u{1F9F1}\u{1F9F1} " + droid.name + " you went down like a ton of bricks, the wrecked remains of the lunar lander can still be seen from earth twinkling in the distance.");
 }
 
 // Level 2 convert it to a switch statement.
 if (lunarRadar.isEnabled && lunarRadar.lat && lunarRadar.long) {
   switch (true) {
     case lunarRadar.approachSpeed >= 200 && lunarRadar.approachSpeed < 299:
-      console.log("\u{269B} well done " + name + " we have touched down safely. Lets get some samples and get heck outta here!");
+      console.log("\u{269B} well done " + droid.name + " we have touched down safely. Lets get some samples and get heck outta here!");
       break;
     case lunarRadar.approachSpeed >= 300:
-      console.log("\u{1F627} coming in hot " + name + " decrease pitch!");
+      console.log("\u{1F627} coming in hot " + droid.name + " decrease pitch!");
       break;
     case lunarRadar.approachSpeed >= 400:
-      console.log("\u{1F627} coming in way too hot " + name + " decrease pitch!");
+      console.log("\u{1F627} coming in way too hot " + droid.name + " decrease pitch!");
       break;
     case lunarRadar.approachSpeed >= 100:
-      console.log("\u{1F47D} hmmm need a bit more heat " + name + " lets increase pitch and we should have a smooth landing");
+      console.log("\u{1F47D} hmmm need a bit more heat " + droid.name + " lets increase pitch and we should have a smooth landing");
       break;
     default:
       console.log('Please enter an approach speed');
       break;
   }
 } else {
-  console.log("\u{1F9F1}\u{1F9F1}\u{1F9F1}\u{1F9F1} " + name + " you went down like a ton of bricks, the wrecked remains of the lunar lander can still be seen from earth twinkling in the distance.");
+  console.log("\u{1F9F1}\u{1F9F1}\u{1F9F1}\u{1F9F1} " + droid.name + " you went down like a ton of bricks, the wrecked remains of the lunar lander can still be seen from earth twinkling in the distance.");
 }
+
+
+/*
+ 6. PLANETARY INFO-DASH:::::
+
+ Level 1::::::::::::::
+ Given this array of planets using what you know about how to access data in an arrays index log out the:
+  - Description,
+  - Surface temperature and
+  - Mass
+
+  in the console logs bellow.
+
+  tip: pass your variables into the console.log after comma ,
+*/
+console.log("\u{1F319} PLANETARY INFO-DASH:::::");
+
+var planets = [
+  {
+    name: "MERCURY",
+    info: {
+      description: "The smallest and fastest planet, Mercury is the closest planet to the Sun and whips around it every 88 Earth days.",
+      temp: "-173 to 427°",
+      mass: "330,104,000,000,000 billion kg (0.055 x Earth)"
+    }
+  }, {
+    name: "Jupiter",
+    info: {
+      description: "Jupiter is a massive planet, twice the size of all other planets combined and has a centuries-old storm that is bigger than Earth.",
+      temp: "-108°C",
+      mass: "1,898,130,000,000,000,000 billion kg (317.83 x Earth)"
+    }
+  }, 
+  {
+    name: "EARTH",
+    info: {
+      description: "Earth is the third planet from the Sun and the fifth largest planet in the Solar System with the highest density. It is currently the only known location where life is present.",
+      temp: "110 degrees Fahrenheit / 48 degrees Celsius, and the lowest around -126 degrees Fahrenheit / -88 degrees Celsius, maybe even lower",
+      mass: "6.6 sextillion tons"
+    }
+  }, 
+  {
+    name: "MARS",
+    info: {
+      description: "Mars is the fourth planet from the Sun and the second-smallest planet with a thin atmosphere, having the surface features reminiscent both of the impact craters of the Moon, and the valleys, deserts and polar ice caps of Earth. It is the most widely searched planet for life.",
+      temp: "87 to -5 °C",
+      mass: "641,693,000,000,000 billion kg (0.107 x Earth)"
+    }
+  }
+]
+
+for(var i = 0; i < planets.length; i++) {
+  console.group(planets[i].name);
+  console.log("Description:", planets[i].info.description);
+  console.log("Surface temperature:", planets[i].info.temp);
+  console.log("Mass:", planets[i].info.mass);
+  console.groupEnd();
+}
+
+/*
+ Level 2::::::::::::::
+ Add 2 New planets of your choosing to the front of the Array : https://nineplanets.org
+*/
+
+// planets.unshift(['Uranus']);
+// planets[0].push(['Uranus is the seventh planet discovered in the Solar System that also led to the discovery of the last planet, Neptune they are both referred to as ice giants. Officially recognized in 1781 after many observations in the past, it is the third largest planet of the Solar System.']);
+// planets[0].push('-197 °C');
+// planets[0].push('86,810,300,000,000,000 billion kg (14.536 x Earth)');
+
+var uranus = [
+  {
+    name: "URANUS",
+    info: {
+      description: "Uranus is the seventh planet discovered in the Solar System that also led to the discovery of the last planet, Neptune they are both referred to as ice giants. Officially recognized in 1781 after many observations in the past, it is the third largest planet of the Solar System.",
+      temp: "-197 °C",
+      mass: "86,810,300,000,000,000 billion kg (14.536 x Earth)"
+    }
+  },
+]
+
+planets.unshift(uranus);
+
+/*
+ 7. Android Object REFACTOR:::::
+
+ Level 1::::::::::::::
+ Refactor (change) all the variables you have in place that initializes the android into an android object.
+ - Your android needs a head, upperBody, lowerBody & [ anyThingElseYouCanDreamOf ].
+ - Feel free to create any new properties that will further describe your android [ anyThingYouCanDreamOf ].
+ - next update your application to use this newly refactored code
+
+ tip: the console.log that prints the variables of the android will need to be updated
+
+ Level 2::::::::::::::
+ Refactor the planets array to be an array of objects, each object must be its own planet.
+  - next update your application to use this newly refactored code
+*/
